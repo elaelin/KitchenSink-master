@@ -1,0 +1,29 @@
+﻿
+<template>
+    <template is="dom-bind">
+       <h1>Sortable List</h1>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Button up</th>
+                    <th>Button down</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template is="dom-repeat" items="{{model.Person}}">
+                <tr>
+                    <td>{{item.Number}}</td>
+                    <td>{{item.FirstName}}</td>
+                    <td>{{item.LastName}}</td>
+                    <td><button id="UPandDOWN" class="btn btn-sm btn-default" value="{{model.MoveUp$::click}}" onmousedown="++this.value">UP</button></td>
+                    <td><button id="UPandDOWN" class="btn btn-sm btn-default" value="{{model.MoveUp$::click}}" onmousedown="++this.value">DOWN</button></td>
+                </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+</template>
